@@ -1,0 +1,190 @@
+-- Part 1
+------------------------
+-- 1.
+SELECT *
+FROM attribute
+-- Answer to all tables: 10000
+
+------------------------
+-- 2.
+SELECT distinct id
+FROM business
+-- i. 10000
+
+SELECT distinct business_id
+FROM hours
+-- ii. 1562
+
+SELECT distinct business_id
+FROM category
+-- iii. 2643
+
+SELECT distinct business_id
+FROM attribute
+-- iv. 1115
+
+SELECT distinct id
+FROM review
+-- v. 10000
+
+SELECT distinct business_id
+FROM checkin
+-- vi. 493
+
+SELECT distinct id
+FROM photo
+-- vii. 10000
+
+SELECT distinct user_id
+FROM tip
+-- viii. 537
+
+SELECT distinct id
+FROM user
+-- ix. 10000
+
+SELECT distinct user_id
+FROM friend
+-- x. 11
+
+SELECT distinct user_id
+FROM elite_years
+-- xi. 2780
+
+
+------------------------
+
+-- 3.
+
+SELECT *
+FROM user
+WHERE <column> is null
+
+-- Answer is no
+
+------------------------
+
+-- 4.
+SELECT min(stars), max(stars), avg(stars)
+FROM review
+
+-- i.
+--+------------+------------+------------+
+--| min(stars) | max(stars) | avg(stars) |
+--+------------+------------+------------+
+--|          1 |          5 |     3.7082 |
+--+------------+------------+------------+
+
+-- ii.
+--+------------+------------+------------+
+--| min(stars) | max(stars) | avg(stars) |
+--+------------+------------+------------+
+--|        1.0 |        5.0 |     3.6549 |
+--+------------+------------+------------+
+
+
+-- iii.
+
+SELECT min(likes), max(likes), avg(likes)
+FROM tip
+
+--+------------+------------+------------+
+--| min(likes) | max(likes) | avg(likes) |
+--+------------+------------+------------+
+--|          0 |          2 |     0.0144 |
+--+------------+------------+------------+
+
+-- iv.
+--+------------+------------+------------+
+--| min(count) | max(count) | avg(count) |
+--+------------+------------+------------+
+--|          1 |         53 |     1.9414 |
+--+------------+------------+------------+
+
+-- v.
+--+-------------------+-------------------+-------------------+
+--| min(review_count) | max(review_count) | avg(review_count) |
+--+-------------------+-------------------+-------------------+
+--|                 0 |              2000 |           24.2995 |
+--+-------------------+-------------------+-------------------+
+
+
+------------------------
+-- 5.
+
+SELECT count(r.text) as no, city
+FROM review as r INNER JOIN business as b ON r.business_id = b.id
+GROUP BY city
+ORDER BY no desc
+
++-----+-----------------+
+|  no | city            |
++-----+-----------------+
+| 193 | Las Vegas       |
+|  65 | Phoenix         |
+|  51 | Toronto         |
+|  37 | Scottsdale      |
+|  30 | Henderson       |
+|  28 | Tempe           |
+|  23 | Pittsburgh      |
+|  22 | Chandler        |
+|  21 | Charlotte       |
+|  18 | Montréal        |
+|  16 | Madison         |
+|  13 | Gilbert         |
+|  13 | Mesa            |
+|  12 | Cleveland       |
+|   6 | North Las Vegas |
+|   5 | Edinburgh       |
+|   5 | Glendale        |
+|   5 | Lakewood        |
+|   4 | Cave Creek      |
+|   4 | Champaign       |
+|   4 | Markham         |
+|   4 | North York      |
+|   3 | Mississauga     |
+|   3 | Surprise        |
+|   2 | Avondale        |
++-----+-----------------+
+(Output limit exceeded, 25 of 67 total rows shown)
+
+------------------------
+
+-- 6.
+
+--i.
+
+SELECT stars, count(stars)
+FROM business
+GROUP BY city, stars
+HAVING city LIKE 'Avon'
+
++-------+--------------+
+| stars | count(stars) |
++-------+--------------+
+|   1.5 |            1 |
+|   2.5 |            2 |
+|   3.5 |            3 |
+|   4.0 |            2 |
+|   4.5 |            1 |
+|   5.0 |            1 |
++-------+--------------+
+
++-------+--------------+
+| stars | count(stars) |
++-------+--------------+
+|   2.0 |            1 |
+|   2.5 |            1 |
+|   3.0 |            2 |
+|   3.5 |            2 |
+|   4.0 |            1 |
+|   4.5 |            2 |
+|   5.0 |            5 |
++-------+--------------+
+
+------------------------
+------------------------
+------------------------
+------------------------
+------------------------
+------------------------
