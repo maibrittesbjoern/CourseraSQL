@@ -9,7 +9,7 @@ For both parts of this assignment, use this "worksheet." It provides all the que
 In this case, you may want to save as a PDF to ensure your formatting remains intact for you reviewer.
 
 
-
+###################################################
 Part 1: Yelp Dataset Profiling and Understanding
 
 1. Profile the data by finding the total number of records for each of the tables below:
@@ -110,6 +110,7 @@ SQL code used to arrive at answer:
 
 Copy and Paste the Resulting Table Below (2 columns – star rating and count):
      	 
+###################################################
 
 
 7. Find the top 3 users based on their total number of reviews:
