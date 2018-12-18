@@ -117,36 +117,36 @@ FROM review as r INNER JOIN business as b ON r.business_id = b.id
 GROUP BY city
 ORDER BY no desc
 
-+-----+-----------------+
-|  no | city            |
-+-----+-----------------+
-| 193 | Las Vegas       |
-|  65 | Phoenix         |
-|  51 | Toronto         |
-|  37 | Scottsdale      |
-|  30 | Henderson       |
-|  28 | Tempe           |
-|  23 | Pittsburgh      |
-|  22 | Chandler        |
-|  21 | Charlotte       |
-|  18 | Montréal        |
-|  16 | Madison         |
-|  13 | Gilbert         |
-|  13 | Mesa            |
-|  12 | Cleveland       |
-|   6 | North Las Vegas |
-|   5 | Edinburgh       |
-|   5 | Glendale        |
-|   5 | Lakewood        |
-|   4 | Cave Creek      |
-|   4 | Champaign       |
-|   4 | Markham         |
-|   4 | North York      |
-|   3 | Mississauga     |
-|   3 | Surprise        |
-|   2 | Avondale        |
-+-----+-----------------+
-(Output limit exceeded, 25 of 67 total rows shown)
+-- +-----+-----------------+
+-- |  no | city            |
+-- +-----+-----------------+
+-- | 193 | Las Vegas       |
+-- |  65 | Phoenix         |
+-- |  51 | Toronto         |
+-- |  37 | Scottsdale      |
+-- |  30 | Henderson       |
+-- |  28 | Tempe           |
+-- |  23 | Pittsburgh      |
+-- |  22 | Chandler        |
+-- |  21 | Charlotte       |
+-- |  18 | Montréal        |
+-- |  16 | Madison         |
+-- |  13 | Gilbert         |
+-- |  13 | Mesa            |
+-- |  12 | Cleveland       |
+-- |   6 | North Las Vegas |
+-- |   5 | Edinburgh       |
+-- |   5 | Glendale        |
+-- |   5 | Lakewood        |
+-- |   4 | Cave Creek      |
+-- |   4 | Champaign       |
+-- |   4 | Markham         |
+-- |   4 | North York      |
+-- |   3 | Mississauga     |
+-- |   3 | Surprise        |
+-- |   2 | Avondale        |
+-- +-----+-----------------+
+-- (Output limit exceeded, 25 of 67 total rows shown)
 
 ------------------------
 
@@ -159,28 +159,28 @@ FROM business
 GROUP BY city, stars
 HAVING city LIKE 'Avon'
 
-+-------+--------------+
-| stars | count(stars) |
-+-------+--------------+
-|   1.5 |            1 |
-|   2.5 |            2 |
-|   3.5 |            3 |
-|   4.0 |            2 |
-|   4.5 |            1 |
-|   5.0 |            1 |
-+-------+--------------+
+-- +-------+--------------+
+-- | stars | count(stars) |
+-- +-------+--------------+
+-- |   1.5 |            1 |
+-- |   2.5 |            2 |
+-- |   3.5 |            3 |
+-- |   4.0 |            2 |
+-- |   4.5 |            1 |
+-- |   5.0 |            1 |
+-- +-------+--------------+
 
-+-------+--------------+
-| stars | count(stars) |
-+-------+--------------+
-|   2.0 |            1 |
-|   2.5 |            1 |
-|   3.0 |            2 |
-|   3.5 |            2 |
-|   4.0 |            1 |
-|   4.5 |            2 |
-|   5.0 |            5 |
-+-------+--------------+
+-- +-------+--------------+
+-- | stars | count(stars) |
+-- +-------+--------------+
+-- |   2.0 |            1 |
+-- |   2.5 |            1 |
+-- |   3.0 |            2 |
+-- |   3.5 |            2 |
+-- |   4.0 |            1 |
+-- |   4.5 |            2 |
+-- |   5.0 |            5 |
+-- +-------+--------------+
 
 ------------------------
 ------------------------
